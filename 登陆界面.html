@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Group5.ico" type="image/x-icon">
+    <title>登录</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            background-image: url(./images/komorebi.png);
+            display: flex;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        input{
+            border: transparent;
+            outline: none;
+            display: block;
+            margin: 50px auto;
+            width: 400px;
+            height: 50px;
+            font-size: 30px;
+            padding-left: 20px;
+            letter-spacing: 2px;
+            box-shadow: inset 5px 5px 5px rgba(128, 128, 128, 0.8);
+            border-radius: 15px;
+        }
+        input::-webkit-input-placeholder { 
+            color: #BDCADA;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+        .the-form{
+            margin: auto;
+            width: 1000px;
+            height: 500px;
+            /* border-radius: 50px; */
+            box-shadow: 10px 10px 10px rgba(0, 0, 0,0.7),-10px -10px 10px rgba(245, 245, 245, 0.8);
+            display: flex;
+            transform-style: preserve-3d;
+            animation-name: shanxian;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        @keyframes shanxian{
+            from{}
+            to{
+                opacity: 1;
+            }
+        }
+        .the-image{
+            width: 500px;
+            height: 500px;
+            background-color: transparent;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 5px 0px 5px rgba(128, 128, 128, 0.8);
+        }
+        .yuan{
+            position: absolute;
+            width: 800px;
+            height: 500px;
+            transform: rotateZ(115deg);
+            left: 150px;
+            top: 300px;
+            background-color: transparent;
+            border-radius: 50%;
+            box-shadow: inset 10px 0px 10px rgba(0, 0, 0,0.8),inset -10px -0px 10px rgba(245, 245, 245, 0.8);
+        }
+        .yuan1{
+            position: absolute;
+            width: 800px;
+            height: 500px;
+            transform: rotateZ(115deg);
+            left: -400px;
+            top: -300px;
+            background-color: transparent;
+            border-radius: 50%;
+            box-shadow: inset 10px 0px 10px rgba(0, 0, 0,0.8),inset -10px -0px 10px rgba(245, 245, 245, 0.8);
+        }
+        .login{
+            width: 500px;
+            background-color: #e9ecef;
+            /* border-top-right-radius: 50px; */
+            /* border-bottom-right-radius: 50px; */
+        }
+        h2{
+            text-align: center;
+            line-height: 100px;
+            font-size: 40px;
+            letter-spacing: 5px;
+        }
+        .button{
+            display: block;
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            font-size: 30px;
+            color: blueviolet;
+            font-weight: 800;
+            line-height: 50px;
+            background-image: linear-gradient(#9c88ff,#3cadeb);
+            margin: 60px auto;
+            margin-bottom: 30px;
+            border-radius: 30px;
+            border: transparent;
+            transition-duration: 0.3s;
+        }
+        .button:hover{
+            background-image: linear-gradient(135deg, rgb(0, 0, 0), rgb(199, 228, 255));
+            color: whitesmoke;
+        }
+        .a1{  
+            position: absolute;
+            right: 30px;
+            bottom: 160px;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .a2{  
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="the-form">
+        <div class="the-image">
+            <div class="yuan"></div>
+            <div class="yuan1"></div>
+        </div>
+        <div class="login">
+            <h2>Login account</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="请输入用户名" name="username" id="username">
+                <input type="password" placeholder="请输入密码" name="password" id="password">
+                <a href="./忘记密码界面.html" target="_blank" class="a1">Find my password</a>
+                <button type="button" class="button" onclick="submitForm()">login</button>
+                <a href="../我给我的项目/注册界面.html" target="_blank" class="a2">if you don't have an account,please regist!</a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            // Get username and password values from the input fields
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Create an object with the login credentials
+            var credentials = {
+                username: username,
+                password: password
+            };
+
+            // Convert the object to JSON
+            var jsonData = JSON.stringify(credentials);
+
+            // Make an AJAX request
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://47.115.212.183:8080/api/account/login/",true);
+            
+            // Set the Content-Type header to application/json
+            xhr.setRequestHeader("Content-Type", "application/json");
+            
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        // Server returned a successful response
+                        alert("Login successful!");
+                    } else {
+                        // Handle other status codes or errors here
+                        alert("Login failed. Please check your credentials."+ xhr.status);
+                    }
+                }
+            };
+            
+            // Send the JSON data in the request
+            xhr.send(jsonData);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+.banner{
+    position: relative;
+    height: 600px;
+    background-color: #f5f5f5;
+}
+.banner .wrapper{
+    position: relative;
+    height: 600px;
+    background-color: rgba(255, 0, 0, 0.8);
+    overflow: hidden;
+}
+.banner .wrapper img{
+    width: 100%;
+    height: auto;
+}
+/* .banner .aside{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, .8);
+}
+.banner .aside a{
+    position: relative;
+    width: 250px;
+    height: 50px;
+    padding: 17px 19px 17px 36px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+}
+.banner .aside a:hover{
+    background-color: #27ba9b;
+}
+.banner .aside a span{
+    font-size: 14px;
+    margin-left: 15px;
+}
+.banner .aside a::after{
+    content: "";
+    position: absolute;
+    right: 19px;
+    top: 19px;
+    width: 6px;
+    height: 11px;
+    background-image: url(../images/sprites.png);
+    background-position: -80px -110px;
+} */
+.banner .prev,.next{
+    position: absolute;
+    top: 50%;
+    width: 45px;
+    height: 44px;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 50%;
+    display: block;
+}
+.banner .prev{
+    position: absolute;
+    left: 10px;
+}
+.banner .next{
+    position: absolute;
+    right: 10px;
+}
+.banner .prev .button{
+    position: absolute;
+    top: 11px;
+    left: 14px;
+    width: 13px;
+    height: 23px;
+    background-image: url(../images/sprites.png);
+    background-position: 0 -70px;
+}
+.banner .next .button{
+    position: absolute;
+    top: 11px;
+    right: 14px;
+    width: 13px;
+    height: 23px;
+    background-image: url(../images/sprites.png);
+    background-position: -40px -70px;
+}
+.banner ol{
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    width: 200px;
+    height: 10px;
+}
+.banner ol li{
+    float: left;
+    margin-right: 24px;
+    width: 12px;
+    height: 12px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.banner ol .current{
+    
+    background-color: white;
+}
+
+.goods{
+    margin: 48px auto 0;
+    height: 471px;
+}
+.goods .hd{
+    height: 29px;
+}
+.goods .hd .left{
+    float: left;
+    height: 29px;
+    font-size: 29px;
+    color: #333;
+    line-height: 29px;
+}
+.goods .hd .left span{
+    margin-left: 34px;
+    font-size: 16px;
+    color: #999;
+}
+.goods .hd .right{
+    margin-top: 5px;
+    float: right;
+    font-size: 16px;
+    color: #999;
+}
+.goods .hd .right::after,
+.vegetable .hd .more::after{
+    content: "";
+    margin-left: 13px;
+    width: 7px;
+    height: 13px;
+    background-image: url(../images/sprites.png);
+    background-position: 0 -110px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.goods .bd li{
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 350px;
+    margin-top: 37px;
+    margin-right: 8px;
+    background-color: #f0f9f4;
+    text-align: center;
+    transition-duration: 0.3s;
+}
+.goods .bd li:hover{
+    box-shadow: 5px 5px 5px gray;
+}
+.goods .bd li:last-child{
+    margin-right: 0;
+}
+.goods .bd li img{
+    width: 300px;
+}
+.goods .bd li h3{
+    margin: 15px auto 10px;
+    font-size: 20px;
+    color: #333;
+    font-weight: normal;
+}
+.goods .bd li span{
+    height: 18px;
+    margin-bottom: 23px;
+    font-size: 23px;
+    color: #9a2e1f;
+}
+.goods .bd li b{
+    position: absolute;
+    left: 17px;
+    top: 18px;
+    width: 50px;
+    height: 30px;
+    border: 1px solid #27ba9b;
+    border-radius: 2px;
+    font-size: 24px;
+    color: #ff4500;
+    font-weight: normal;
+    line-height: 1em;
+}
+
+.vegetable .hd{
+    height: 96px;
+    line-height: 96px;
+    font-size: 20px;
+}
+.vegetable .hd h2{
+    float: left;
+}
+.vegetable .hd .more{
+    float: right;
+    color: #999999;
+    font-size: 16px;
+}
+.vegetable .hd ul{
+    float: right;
+    margin-right: 52px;
+}
+.vegetable .hd li{
+    float: left;
+}
+.vegetable .hd li a{
+    margin-right: 6px;
+    padding: 2px 7px;
+}
+.vegetable .hd li a:hover{
+    background-color: #27ba9b;
+    color: #fefbfc;
+}
+.vegetable .bd{
+    margin-bottom: 33px;
+    display: inline-flex;
+}
+.vegetable .bd .left{
+    width: 242px;
+    flex: auto;
+}
+.vegetable .bd .left img{
+    width: 242px;
+    height: auto;    
+}
+.vegetable .bd .right{
+    width: 1190px;
+    flex: auto;
+}
+.vegetable .bd .right img{
+    width: 180px;
+    height: 180px;
+    margin-bottom: 16px;
+}
+.vegetable .bd .right li{
+    width: 242px;
+    height: 304px;
+    padding: 9px 16px 13px;
+    float: left;
+    transition-duration: 0.3s;
+}
+.vegetable .bd li:hover{
+    box-shadow: 5px 5px 5px gray;
+}
+.vegetable .bd .right li a{
+    text-align: center;
+    display: block;
+}
+.vegetable .bd .right li .price b{
+    color: #9a2e1f;
+    font-size: 22px;
+    font-weight: normal;
+}
+.vegetable .bd .right li .price span{
+    color: #9a2e1f;
+    font-size: 16px;
+}
+.vegetable .bd .right p{
+    font-size: 20px;
+    margin-bottom: 5px;
+}

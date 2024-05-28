@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Group5.ico" type="image/x-icon">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            /* display: flex; */
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            background-image: url("./images/极光.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .inner{
+            background-color: whitesmoke;
+            border-radius: 50px;
+            padding: 10px;
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .title{
+            text-align: center;
+            font-size: 60px;
+            font-weight: bolder;
+            font-style: italic;
+            color: whitesmoke;
+            padding-bottom: 30px;
+            padding-top: 30px;
+            animation-name: shanxian;
+            animation-duration: 2.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        .title2{
+            text-align: center;
+            font-size: 60px;
+            font-weight: bolder;
+            font-style: italic;
+            color: whitesmoke;
+            padding-bottom: 30px;
+            padding-top: 30px;
+            animation-name: shanxian;
+            animation-duration: 2.5s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        @keyframes shanxian{
+            from{
+
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        li {
+            list-style: none;
+            display: inline-block;
+            font-size: 40px;
+            font-weight: 700;
+            font-style: italic;
+            padding: 20px 20px;
+            margin: 0px 20px;
+            transition-duration: 0.5s;
+            animation-name: shanxian;
+            animation-duration: 2.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        @keyframes shanxian{
+            from{}
+            to{
+                opacity: 1;
+            }
+        }
+        li:hover{
+            background-color: rgba(0, 0, 0, 0.8);
+            color: whitesmoke;
+            border-radius: 30px;
+        }
+        .herf{
+            text-decoration: none;
+            color: inherit;
+        }
+        .blank{
+            width: 100%;
+            height:100px;
+        }
+        .blank-two{
+            width: 100%;
+            height: 200px;
+            background-image: linear-gradient(to top ,rgba(0,0,0,0.6), transparent);
+            text-align: center;
+            line-height: 200px;
+            font-size: 60px;
+            font-weight: bolder;
+            font-style: italic;
+            color: whitesmoke;
+            padding-bottom: 30px;
+            padding-top: 30px;
+            animation-name: shanxian;
+            animation-duration: 2.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            animation-delay: 2s;
+        }
+        .container2{
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0,0, 0.6);
+            position: relative;
+        }
+        .left{
+            position: absolute;
+            top: 30%;
+            left: -50%;
+            animation-name: donghua;
+            animation-duration: 2s;
+            animation-iteration-count: inherit;
+            animation-fill-mode: forwards;
+        }
+        iframe{
+            position: absolute;
+            top: 30%;
+            right: -50%;
+            animation-name: donghua2;
+            animation-duration: 2s;
+            animation-iteration-count: inherit;
+            animation-fill-mode: forwards;
+        }
+        @keyframes donghua{
+            from{
+
+            }
+            to{
+                left: 5%;
+            }
+        }
+        @keyframes donghua2{
+            from{
+
+            }
+            to{
+                right: 5%;
+            }
+        }
+        h1{
+            font-size: 60px;
+            font-weight: bolder;
+            font-style: italic;
+            color: whitesmoke;
+        }
+        .line{
+            width: 600px;
+            height: 2px;
+            background-color: whitesmoke;
+        }
+        p{
+            width: 48%;
+            font-size: 20px;
+            line-height: 1.5;
+            font-weight: 500;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Hi! Group 5</div>
+        <div class="inner">
+            <ul>
+                <li>
+                    <a href="#" class="herf">home</a>
+                </li>
+                <li>
+                    <a href="./旅游用品展览界面.html" class="herf" target="_blank">traveling</a>
+                <li>
+                    <a href="../我给我的项目/药品展览页面.html" class="herf" target="_blank">medicine</a>
+                </li>
+                <li>
+                    <a href="../我给我的项目/家具商品展览页面.html" class="herf" target="_blank">furniture</a>
+                </li>
+                <li>
+                   <a href="../我给我的项目/登陆界面.html" class="herf">log</a>
+                </li>
+                <li>
+                    <a href="../我给我的项目/搜索框2.html" class="herf" target="_blank">Searching</a>
+                 </li>
+            </ul>
+        </div>   
+        <div class="blank"></div>
+        <div class="title">welcome to our bank!</div> 
+        <div class="title2">choose the things you like!</div>
+        <div class="blank-two">Let's Start!</div>
+        <div class="container2">
+            <div class="left">
+                <h1>Relaxation time</h1>
+                <div class="line"></div>
+                <p>wish you have a nice day! Having been working so hard all day, please relax yourself at this moment</p>
+                <a href=""></a>
+            </div>
+            <iframe src="https://player.bilibili.com/player.html?bvid=BV1dN4y1C7RX" width="600" height="315" frameborder="0" allowfullscreen="true" loop></iframe>
+        </div>
+    </div>
+</body>
+</html>

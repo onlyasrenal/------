@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="Group5.ico" type="image/x-icon">
+    <title>购物车</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 5px;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            }
+        #app {
+            width: 1000px;
+            height: 100vh;
+            margin: auto;
+            background-image: linear-gradient(135deg, rgb(255, 230, 204), rgb(238, 255, 189));
+            position: relative;
+            border-radius: 20px;
+            }
+        #product-list {
+            list-style-type: none;
+            padding: 0px;
+            margin: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            color: whitesmoke;
+            }
+        #product-list li {
+            /* border: 1px solid #ddd; */
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 100px;
+            height: 100px;
+            /* margin-bottom: 5px; */
+            margin: 5px;
+            }
+        .container{
+            position: fixed;
+            top: 50%;
+        }
+        button {
+            background-color: white; /* 按钮背景颜色 */
+            border: none; /* 按钮边框 */
+            padding: 10px 20px; /* 按钮内边距 */
+            font-size: 16px; /* 按钮字体大小 */
+            border-radius: 5px; /* 按钮圆角 */
+            cursor: pointer; /* 鼠标悬停指针样式 */
+            transition-duration: 0.3s;
+            font-style: italic;
+            /* position: fixed; */
+            /* top: 50%; */
+        }
+        
+        button:hover {
+            background-color: rgba(40, 40, 38, 0.8); /* 鼠标悬停时按钮背景颜色 */
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 style="text-align: center;">Shopping Cart</h1>
+        <h1 style="text-align: center;">Total Price: </h1>
+        <ul id="product-list">
+
+        </ul>
+        <div class="container">
+            <button id="add-product">AddGoods</button>
+            <button id="update-product">UpdateGoods</button>
+            <button id="delete-product">Delectgoods</button>
+        </div>
+    </div>
+<script>
+    document.getElementById('add-product').addEventListener('click', function() {
+    fetch('/product', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.string})})
+    const add = document.querySelector("#add-product")
+    add.addEventListener("click",function(){
+        let newLi = document.createElement('li');
+            // 设置新li元素的内容
+        newLi.textContent = 'Goods';
+            // 将新li元素添加到id为app的ul元素中
+        document.getElementById('product-list').appendChild(newLi);
+    })
+    const delectP = document.querySelector("#delete-product")
+    delectP.addEventListener("click",function(){
+            //先用一个数组来存放所有的购物车清单上的商品
+        let list = document.querySelectorAll('li');
+        if(list.length>0){
+            list[0].remove()
+        }  
+    })
+</script>
+</body>
+</html>
